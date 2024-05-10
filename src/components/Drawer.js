@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Drawer = () => {
     return (
         <div style={{ display: 'none' }} className="drawer">

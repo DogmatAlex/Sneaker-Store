@@ -3,6 +3,13 @@ import Card from './components/Card';
 import Header from './components/Header';
 import Drawer from './components/Drawer';
 
+const sneakers = [
+    { title: 'Мужские кроссовки Nike Blazer Mid 77', price: '11 500', imgUrl: '/Img/Sneakers/NikeBlazer.jpg' },
+    { title: 'Мужские кроссовки Nike Air Max 270', price: '12 999', imgUrl: '/Img/Sneakers/NikeAirMax270.jpg' },
+    { title: 'Мужские кроссовки Nike Lebron XIX EP 19', price: '14 500', imgUrl: '/Img/Sneakers/LebronXIX19.jpg' },
+    { title: 'Мужские кроссовки PUMA X-Ray Speed', price: '9 500', imgUrl: '/Img/Sneakers/PumaXray.jpg' },
+];
+
 function App() {
     return (
         <div className="App">
@@ -19,55 +26,10 @@ function App() {
                 </div>
 
                 <div className="sneakers">
-                    <Card />
-
-                    <div className="card">
-                        <img className="favorite" src="/Img/heart-unliked.png" alt="unliked" />
-                        <img className="sneakers-img" src="/Img/Sneakers/NikeAirMax270.jpg" alt="Sneakers" />
-                        <h5>Мужские кроссовки Nike Air Max 270</h5>
-
-                        <div className="card__bottom">
-                            <div className="priceAndBuy">
-                                <span>Цена:</span>
-                                <b>12 999 руб.</b>
-                            </div>
-                            <button className="button">
-                                <img height={12} width={12} src="/Img/plus.png" alt="Plus" />
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="card">
-                        <img className="favorite" src="/Img/heart-unliked.png" alt="unliked" />
-                        <img className="sneakers-img" src="/Img/Sneakers/LebronXIX19.jpg" alt="Sneakers" />
-                        <h5>Мужские кроссовки Nike Lebron XIX EP 19</h5>
-
-                        <div className="card__bottom">
-                            <div className="priceAndBuy">
-                                <span>Цена:</span>
-                                <b>12 999 руб.</b>
-                            </div>
-                            <button className="button">
-                                <img height={12} width={12} src="/Img/plus.png" alt="Plus" />
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="card">
-                        <img className="favorite" src="/Img/heart-unliked.png" alt="unliked" />
-                        <img className="sneakers-img" src="/Img/Sneakers/PumaXray.jpg" alt="Sneakers" />
-                        <h5>Мужские кроссовки PUMA X-Ray Speed</h5>
-
-                        <div className="card__bottom">
-                            <div className="priceAndBuy">
-                                <span>Цена:</span>
-                                <b>12 999 руб.</b>
-                            </div>
-                            <button className="button">
-                                <img height={12} width={12} src="/Img/plus.png" alt="Plus" />
-                            </button>
-                        </div>
-                    </div>
+                    {sneakers.map(obj => (
+                        <Card title={obj.title} price={obj.price} imgUrl={obj.imgUrl} />
+                    ))}
+                    ;
                 </div>
             </div>
         </div>
