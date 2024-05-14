@@ -1,15 +1,18 @@
 .card {
-    width: 190px;
+    width: 175px;
     padding: 20px;
     margin-right: 30px;
+    margin-bottom: 40px;
     border: 2px solid #d6d2d2b4;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.123);
     border-radius: 20px;
-    transition: box-shadow 0.2s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 15px 3px rgba(216, 215, 215, 0.423);
     
 
     &:hover {
-      box-shadow: 0 10px 10px 8px rgba(0, 0, 0, 0.678);
+      box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.678);
+      transform: translateY(-5px);
     }
 
     & .favorite {
@@ -52,6 +55,8 @@
       }
 
       & .button {
+        background-size: cover;
+        background-position: center;
         background-color: #fff;
         border: 1px solid #848484;
         box-sizing: border-box;
@@ -59,6 +64,11 @@
         height: 32px;
         width: 32px;
         cursor: pointer;
+
+        & .button img {
+          display: block;
+          margin: auto;
+        }        
       }
     }
   }

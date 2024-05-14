@@ -2,13 +2,15 @@ import React from 'react';
 import './Card.scss';
 
 const Card = props => {
-    const onClickButton = () => {
-        alert(props.title);
+    const [isAdded, setIsAdded] = React.useState(false);
+
+    const onClickPlus = () => {
+        setIsAdded(!isAdded);
     };
 
     return (
         <div className="card">
-            <img className="favorite" src="/Img/heart-unliked.png" alt="unliked" />
+            <img className="favorite" onClick={props.onFavorite} src="/Img/heart-unliked.png" alt="unliked" />
             <img className="sneakers-img" src={props.imgUrl} alt="Sneakers" />
             <h5>{props.title}</h5>
 
@@ -17,8 +19,8 @@ const Card = props => {
                     <span>Цена:</span>
                     <b>{props.price} руб.</b>
                 </div>
-                <button className="button" onClick={onClickButton}>
-                    <img height={12} width={12} src="/Img/plus.png" alt="Plus" />
+                <button className="button" onClick={onClickPlus}>
+                    <img src={isAdded ? './Img/checked.png' : './Img/plus.png'} alt="Plus" />
                 </button>
             </div>
         </div>

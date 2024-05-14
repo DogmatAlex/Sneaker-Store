@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Drawer = () => {
+const Drawer = props => {
     return (
-        <div style={{ display: 'none' }} className="drawer">
+        <div className="drawer">
             <div className="drawer__block">
                 <h2>
                     Корзина
-                    <img className="remove-btn" height={12} width={12} src="/Img/remove-on.png" alt="Remove" />
+                    <img className="remove-btn" onClick={props.onClose} height={12} width={12} src="/Img/remove-on.png" alt="Close" />
                 </h2>
 
                 <div className="cartItems">

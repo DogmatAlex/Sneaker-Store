@@ -205,9 +205,16 @@ header {
   & .headerRight {
     display: flex;;
 
-    & li {
+    &__cart {
       margin-right: 30px;
       list-style-type: none;
+      cursor: pointer;
+    }
+
+    &__user {
+      margin-right: 30px;
+      list-style-type: none;
+      cursor: pointer;
     }
   }
 }
@@ -246,6 +253,7 @@ header {
 
   & .sneakers {
     display: flex;
+    flex-wrap: wrap;
   }
 
 }
