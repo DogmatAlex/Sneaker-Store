@@ -1,35 +1,27 @@
 import React from 'react';
 
-const Drawer = props => {
+const Drawer = ({ onClose, items = [] }) => {
     return (
         <div className="drawer">
             <div className="drawer__block">
                 <h2>
                     Корзина
-                    <img className="remove-btn" onClick={props.onClose} height={12} width={12} src="/Img/remove-on.png" alt="Close" />
+                    <img className="remove-btn" onClick={onClose} height={12} width={12} src="/Img/remove-on.png" alt="Close" />
                 </h2>
 
                 <div className="cartItems">
-                    <div className="cartItem">
-                        <img className="cartItem__img" src="/Img/Sneakers/NikeBlazer.jpg" alt="Sneakers" />
-                        <div className="cartItem__info">
-                            <p>Мужские кроссовки Nike Blazer Mid 77</p>
-                            <b>12 999 руб.</b>
+                    {items.map(obj => (
+                        <div className="cartItem">
+                            <img className="cartItem__img" src={obj.imgUrl} alt="Sneakers" />
+                            <div className="cartItem__info">
+                                <p>{obj.title}</p>
+                                <b>{obj.price} руб.</b>
+                            </div>
+                            <button className="btn-remove">
+                                <img height={12} width={12} src="/Img/remove-on.png" alt="Remove" />
+                            </button>
                         </div>
-                        <button className="btn-remove">
-                            <img height={12} width={12} src="/Img/remove-on.png" alt="Remove" />
-                        </button>
-                    </div>
-                    <div className="cartItem">
-                        <img className="cartItem__img" src="/Img/Sneakers/NikeBlazer.jpg" alt="Sneakers" />
-                        <div className="cartItem__info">
-                            <p>Мужские кроссовки Nike Blazer Mid 77</p>
-                            <b>12 999 руб.</b>
-                        </div>
-                        <button className="btn-remove">
-                            <img height={12} width={12} src="/Img/remove-on.png" alt="Remove" />
-                        </button>
-                    </div>
+                    ))}
                 </div>
 
                 <ul>

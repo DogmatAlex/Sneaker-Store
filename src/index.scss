@@ -239,6 +239,17 @@ header {
       border: 1px solid #a2a2a283;
       border-radius: 15px;
       padding: 0 15px;
+      position: relative;
+
+      &__clear {
+        position: absolute;
+        height: 17px;
+        width: 17px;
+        right: 0;
+        right: 15px;
+        cursor: pointer;
+        opacity: 0.6;
+      }
 
       & input {
         width: 200px;
