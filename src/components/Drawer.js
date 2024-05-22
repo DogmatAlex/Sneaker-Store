@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Drawer = ({ onClose, items = [] }) => {
+const Drawer = ({ onClose, onRemove, items = [] }) => {
     return (
         <div className="drawer">
             <div className="drawer__block">
@@ -17,7 +17,7 @@ const Drawer = ({ onClose, items = [] }) => {
                                 <p>{obj.title}</p>
                                 <b>{obj.price} руб.</b>
                             </div>
-                            <button className="btn-remove">
+                            <button className="btn-remove" onClick={() => onRemove(obj.id)}>
                                 <img height={12} width={12} src="/Img/remove-on.png" alt="Remove" />
                             </button>
                         </div>
